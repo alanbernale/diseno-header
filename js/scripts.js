@@ -22,6 +22,7 @@ $(function () {
 
     $('.categories__item > a').click(function () {
         $(this).next('ul').toggleClass('show');
+        console.log(this);
     })
 
     $('.categories__subitem > a').click(function () {
