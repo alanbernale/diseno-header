@@ -4,7 +4,7 @@ $(function () {
 
     $('[data-toggle="tooltip"]').tooltip()
 
-    $('#menu_hamburger').click(function () {
+    $('#menu_hamburger, #menu_hamburger-md').click(function () {
         if(flag == 0) {
             $('#sidebar-navigation').addClass('show')
             $('.sidebar__overlay').addClass('show')

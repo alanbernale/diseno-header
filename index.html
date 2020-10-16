@@ -20,15 +20,25 @@
 	<div class="sidebar__overlay"></div>
 	<header class="header">
 		<div class="container">
+
+			<div class="header__hamburger d-md-none" id="menu_hamburger-md">
+				<i class="fas fa-bars" id="icon_hamburger-md"></i>
+			</div>
+
 			<img class="header__logo" src="https://vyprodsac.test/img/logo-somosoffers.svg" alt="Logo Somos Offers">
 
-			<div class="header__hamburger" id="menu_hamburger">
+			<div class="header__hamburger d-none d-md-block" id="menu_hamburger">
 				<i class="fas fa-bars" id="icon_hamburger"></i>
 			</div>
 
-			<div class="header__search d-none d-md-block">
+			<a href="javascript:void(0)" class="header__cart d-md-none" data-toggle="tooltip" data-placement="top" title="Carrito">
+				<i class="fas fa-shopping-cart"></i>
+				<span class="badge badge-light">0</span>
+			</a>
+
+			<div class="header__search d-none d-lg-block">
 				<form class="js-focus-state">
-					<label class="sr-only" for="searchproduct">Search</label>
+					<label class="sr-only" for="searchproduct-item">Search</label>
 					<div class="input-group">
 						<input type="email" class="form-control py-2 pl-4 font-size-15 border-right-0 height-42 search__input" name="email" id="searchproduct-item" placeholder="Buscar productos" aria-label="Buscar productos" aria-describedby="searchProduct1" required="">
 						<div class="input-group-append">
@@ -41,20 +51,35 @@
 				</form>
 			</div>
 
-			<div class="header__icons d-none d-md-block">
-				<a href="#" class="icon__user" data-toggle="tooltip" data-placement="top" title="Usuario">
-					<i class="far fa-user"></i>
-				</a>
-				<a href="#" class="icon__heart" data-toggle="tooltip" data-placement="top" title="Favoritos">
-					<i class="far fa-heart"></i>
-					<span class="badge badge-light">0</span>
-				</a>
-				<a href="#" class="icon__cart" data-toggle="tooltip" data-placement="top" title="Carrito">
-					<i class="fas fa-shopping-cart"></i>
-					<span class="badge badge-light">0</span>
-					<span class="header-cart-total">S/ 759.90</span>
-				</a>
-			</div>
+			<ul class="header__buttons d-none d-md-flex">
+				<li class="dropdown">
+					<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="top" title="Usuario">
+						<i class="far fa-user"></i>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Mi Usuario</a>
+						<a class="dropdown-item" href="#">Iniciar Sesión</a>
+						<a class="dropdown-item" href="#">Registrarme</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Cerrar Sesión</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="#" class="icon__heart" data-toggle="tooltip" data-placement="top" title="Favoritos">
+						<i class="far fa-heart"></i>
+						<span class="badge badge-light">0</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="#" class="icon__cart" data-toggle="tooltip" data-placement="top" title="Carrito">
+						<i class="fas fa-shopping-cart"></i>
+						<span class="badge badge-light">0</span>
+						<span class="header-cart-total">S/ 759.90</span>
+					</a>
+				</li>
+			</ul>
 		</div>
 	</header>
 	<section class="bottom-header">
@@ -68,7 +93,7 @@
 			<img src="https://vyprodsac.test/img/logo-somosoffers.svg" alt="Logo Somos Offers">
 			<i class="times fas fa-times" id="icon_times"></i>
 		</div>
-		<ul class="sidebar__menu d-md-none">
+		<!--<ul class="sidebar__menu d-md-none">
 			<li>
 				<a href="#" class="menu icon__user">
 					<i class="far fa-user"></i>
@@ -91,7 +116,29 @@
 					<span class="header-cart-total">S/ 759.90</span>
 				</a>
 			</div>
-		</ul>
+		</ul>-->
+		<div class="sidebar__menu d-md-none">
+			<a href="#">Iniciar Sesión</a>
+			<a href="">Registrarme</a>
+		</div>
+
+		<div class="sidebar__user d-md-none">
+			<ul>
+				<li>
+					<a href="javascript:void(0)">
+						<i class="fas fa-user"></i>
+						Usuario
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<i class="fas fa-shopping-bag"></i>
+						Mis órdenes
+					</a>
+				</li>
+			</ul>
+		</div>
+
 		<div class="sidebar__search">
 			<span class="sidebar__title">Búsqueda </span>
 			<form action="#" class="sidebar__form">
@@ -99,6 +146,7 @@
 				<button type="submit"><i class="fas fa-arrow-right"></i></button>
 			</form>
 		</div>
+
 		<div class="sidebar__categories scroll">
 			<span class="sidebar__title">Categorías</span>
 			<ul>

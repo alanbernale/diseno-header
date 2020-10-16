@@ -42,12 +42,43 @@ header .container {
 
 .header__hamburger {
     font-size: 25px;
-    color: var(--color-secundario-negro);
+    color: var(--color-primario-rojo);
     cursor: pointer;
 }
 
-.header__search {
-    width: 500px;
+.header__cart {
+    font-size: 20px;
+    color: var(--color-primario-rojo);
+    cursor: pointer;
+}
+
+.header__cart:hover {
+    color: var(--color-primario-rojo-hover);
+    text-decoration: none;
+}
+
+@media screen and (min-width: 576px) {
+    .header__search {
+        width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__search {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .header__search {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__search {
+        width: 500px;
+    }
 }
 
 .header__search input:focus {
@@ -55,19 +86,19 @@ header .container {
 }
 
 .header__search .search__button {
-    background-color: var(--color-primario-rojo-hover);
+    background-color: var(--color-primario-rojo);
     color: white;
     border-top-right-radius: 6.1875rem;
     border-bottom-right-radius: 6.1875rem;
 }
 
 .header__search .search__input {
-    border-color: var(--color-primario-rojo-hover);
+    border-color: var(--color-primario-rojo);
     border-top-left-radius: 6.1875rem;
     border-bottom-left-radius: 6.1875rem;
 }
 
-.header__icons a {
+/*.header__icons a {
     color: var(--color-primario-negro);
     margin-right: 35px;
 }
@@ -82,6 +113,37 @@ header .container {
 
 .header__icons .header-cart-total {
     margin-left: 12px;
+}*/
+
+.header__buttons {
+    color: var(--color-primario-rojo);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.header__buttons li {
+    list-style: none;
+}
+
+.header__buttons li > a {
+    color: var(--color-primario-rojo);
+}
+
+.header__buttons li {
+    margin-right: 35px;
+}
+
+.header__buttons li:last-child {
+    margin-right: 0;
+}
+
+.header__buttons a:hover {
+    text-decoration: none;
+}
+
+.header__buttons .header-cart-total {
+    margin-left: 12px;
 }
 
 .header-cart-total {
@@ -89,7 +151,7 @@ header .container {
 }
 
 .bottom-header {
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
     z-index: 999;
     height: 35px;
 }
@@ -118,7 +180,8 @@ header .container {
 }
 
 .sidebar__title {
-    color: var(--color-primario-negro)
+    color: var(negro);
+    font-weight: bold;
 }
 
 .sidebar__logo {
@@ -149,6 +212,15 @@ header .container {
 
 .sidebar__menu a {
     color: var(--color-primario-negro);
+    padding: 10px;
+    border: 1px solid var(--color-primario-gris);
+}
+
+.sidebar__menu a:hover {
+    text-decoration: none;
+    background-color: var(--color-primario-gris);
+    color: white;
+    transition: 0.5s;
 }
 
 .sidebar__menu li {
@@ -160,6 +232,36 @@ header .container {
 
 .sidebar__menu .menu.total{
     margin-top: 10px;
+}
+
+.sidebar__user {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-secundario-gris);
+}
+ .sidebar__user ul {
+     margin-bottom: 0;
+ }
+
+.sidebar__user ul li {
+    list-style: none;
+}
+
+.sidebar__user a {
+    color: var(--color-primario-negro);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+.sidebar__user a:hover {
+    text-decoration: none;
+}
+
+.sidebar__user a i {
+    margin-right: 15px;
+    color: var(--color-primario-rojo);
 }
 
 .sidebar__search {
@@ -265,9 +367,10 @@ box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
+    border-bottom: 1px solid var(--color-secundario-gris);
 }
 
 .sidebar__categories .categories__item a * {
@@ -276,11 +379,12 @@ box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 
 .sidebar__categories .categories__name {
     display: flex;
+    font-weight: 500;
 }
 
 .sidebar__categories .categories__name img {
     width: 15px;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
 .sidebar__categories .categories__item a .caret {
