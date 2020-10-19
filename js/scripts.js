@@ -4,7 +4,8 @@ $(function () {
 
     $('[data-toggle="tooltip"]').tooltip()
 
-    $('#menu_hamburger, #menu_hamburger-md').click(function () {
+    $('#menu_hamburger, #menu_hamburger-md').click(function (e) {
+        e.stopPropagation();
         if(flag == 0) {
             $('#sidebar-navigation').addClass('show')
             $('.sidebar__overlay').addClass('show')
@@ -27,5 +28,17 @@ $(function () {
 
     $('.categories__subitem > a').click(function () {
         $(this).next('ul').toggleClass('show');
+    })
+
+    $('body').click(function() {
+        if(flag == 1 ) {
+            $('#sidebar-navigation').removeClass('show')
+            $('.sidebar__overlay').removeClass('show')
+            flag = 0;
+        }
+    })
+
+    $('#sidebar-navigation').click(function(e) {
+        e.stopPropagation();
     })
 })
