@@ -180,11 +180,19 @@ header .container {
     left: -300px;
     height: 100vh;
     background-color: #fff;
-    padding: 0 20px;
+    padding: 40px 20px;
     z-index: 10000;
     transition: 0.5s;
     display: flex;
     flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .sidebar__navigation {
+        width: 400px;
+        padding: 50px 40px;
+        left: -400px;
+    }
 }
 
 .sidebar__navigation.show {
@@ -200,7 +208,6 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--color-secundario-gris);
 }
@@ -307,6 +314,10 @@ header .container {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
+}
+
+.sidebar__search .search:focus {
+    outline: 0;
 }
 
 .sidebar__overlay {
