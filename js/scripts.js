@@ -38,6 +38,14 @@ $(function () {
         }
     })
 
+    $(document).keyup(function (e) {
+        if(e.keyCode== 27 && flag == 1) {
+            $('#sidebar-navigation').removeClass('show')
+            $('.sidebar__overlay').removeClass('show')
+            flag = 0;
+        }
+    })
+
     $('#sidebar-navigation').click(function(e) {
         e.stopPropagation();
     })
