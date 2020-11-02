@@ -18,7 +18,7 @@
 
 <body class="body">
 	<div class="sidebar__overlay"></div>
-	<section class="top-header">
+	<section class="top-header d-none d-md-flex">
 		<div class="container container-modify">
 			<div class="top-header-welcome">
 				¡Bienvenido a Somos Offers!
@@ -32,18 +32,15 @@
 					Sigue tu orden
 					<i class="fas fa-truck-moving"></i>
 				</a>
-				<div class="top-header-option dropdown" style="display: inline-block;">
-					<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="top" title="Usuario">
-						Opciones
-					<i class="fas fa-cog"></i>
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Iniciar Sesión</a>
-						<a class="dropdown-item" href="#">Registrarme</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Cerrar Sesión</a>
-					</div>
-				</div>
+				<span class="top-header-option" v-if="!$store.state.auth">
+					<a href="#">iniciar sesión</a>
+					o
+					<a href="#">registro</a>
+				  </span>
+				<a class="top-header-option" href="javascript:void(0)">
+					Cerrar Sesión
+					<i class="fas fa-sign-out-alt"></i>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -51,10 +48,10 @@
 		<div class="container container-modify">
 
 			<div class="header__container d-flex justify-content-between align-items-center">
-				<img src="/img/bars.6aaeec3b.svg" class="header__hamburger" id="menu_hamburger-md">
+				<img src="img/bars.6aaeec3b.svg" class="header__hamburger" id="menu_hamburger-md">
 				<img class="header__logo" src="img/logo-somosoffers.png" alt="Logo Somos Offers">
 				<a href="#" class="header__cart d-md-none">
-					<img src="/img/carrito.ca58976f.svg">
+					<img src="img/carrito.ca58976f.svg">
 					<span class="badge">0</span>
 				</a>
 			</div>
@@ -67,7 +64,7 @@
 						<div class="input-group-append">
 							<!-- End Select -->
 							<button class="btn height-42 px-3 search__button" type="button" id="searchProduct1">
-								<i class="fas fa-search"></i>
+								<img src="img/buscar.svg">
 							</button>
 						</div>
 					</div>
@@ -76,7 +73,7 @@
 
 			<div class="header__buttons d-none d-md-flex">
 				<div class="header__button user">
-					<img src="/img/user.28cff2ea.svg">
+					<img src="img/user.28cff2ea.svg">
 					<a href="#" class="user-text">
 						<span class="text--secondary">HOLA,</span>
 						<h4 class="text--primary">USUARIO</h4>
@@ -85,14 +82,14 @@
 
 				<div class="header__button">
 					<a href="#" class="icon__heart" data-toggle="tooltip" data-placement="top" title="Favoritos">
-						<img src="/img/corazon.2bd6fbd1.svg">
+						<img src="img/corazon.2bd6fbd1.svg">
 						<span class="badge">0</span>
 					</a>
 				</div>
 
 				<div class="header__button cart">
 					<a href="#" class="icon__cart" data-toggle="tooltip" data-placement="top" title="Carrito">
-						<img src="/img/carrito.ca58976f.svg">
+						<img src="img/carrito.ca58976f.svg">
 						<span class="badge">0</span>
 					</a>
 					<a href="#" class="cart-text">
@@ -115,27 +112,16 @@
 		</div>
 
 		<div class="sidebar__user d-md-none">
-			<ul>
-				<li>
-					<a href="javascript:void(0)">
-						<i class="fas fa-user"></i>
-						Usuario
-					</a>
-				</li>
-				<li>
-					<a href="javascript:void(0)">
-						<i class="fas fa-shopping-bag"></i>
-						Mis órdenes
-					</a>
-				</li>
-			</ul>
+			<img src="img/user.28cff2ea.svg">
+			<a href="#">Mi cuenta</a>
 		</div>
 
 		<div class="sidebar__search">
-			<span class="sidebar__title">Búsqueda </span>
 			<form action="#" class="sidebar__form">
 				<input type="search" class="search" name="search" id="search" placeholder="Buscar ...">
-				<button type="submit"><i class="fas fa-arrow-right"></i></button>
+				<button type="submit" class="sidebar__search--button">
+					<img src="img/buscar.svg">
+				</button>
 			</form>
 		</div>
 
